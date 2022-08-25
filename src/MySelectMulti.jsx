@@ -17,8 +17,7 @@ export default function MySelectMulti({options, onChange}) {
 
 
 return <select onChange={mychangemulti} multiple={true} id="multi_select">
-        <option> Choose......</option>
-         {options.map((option, index) => { return <option value={option.id} key={index}>{option.name}</option>})}
+         {options.map((option) => { return <option value={option.id} >{option.name}</option>})}
         </select>
 }
 
