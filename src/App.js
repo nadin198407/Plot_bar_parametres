@@ -28,22 +28,24 @@ function App() {
 
 
     function chooseSensors(param, datas) {
-        const newArr = [];
-        console.log(param);
-        console.log(datas);
-        const resultArray = param.filter((item) => {
-            return datas.some((item2) => item2.parameter_id === item.id);
-        }
-        );
-        console.log(resultArray);
-        resultArray.forEach(({ id, name }) => newArr.push(
-            {
+         const newArr = [];
+         console.log(param);
+         console.log(datas);
+         const resultArray = param.filter((item) => {
+             return datas.some((item2) => item2.parameter_id === item.id);
+         }
+         );
+         console.log(resultArray);
+         resultArray.forEach(({ id, name }) => newArr.push(
+             {
                 id,
                 name
             }));
         console.log(newArr);
         return newArr
-    }
+     }
+
+ 
 
 
 
@@ -51,7 +53,8 @@ function App() {
 
     return (
         <>
-            <MySelectMulti options={chooseSensors(sensors, records)} onChange={setmultiSelect} />
+    
+            <MySelectMulti options={chooseSensors(sensors, records)} onChange={setmultiSelect} /> 
             {/* {<div>{multiSelect.join(",")}</div>} */}
             <ParametresMulti param={selectParam(multiSelect)} record={records} />
 
